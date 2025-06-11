@@ -28,7 +28,8 @@ export const Navbar = () => {
     // return user?.name[0] + user?.name[1];
   }, [user?.name]);
 
-  // const { approvals } = useNotification();
+  const { notifications } = useNotification();
+  console.log(notifications);
 
 
   return (
@@ -51,7 +52,7 @@ export const Navbar = () => {
               className="border-none shadow-none hover:bg-transparent hover:shadow-none"
             >
               <BellIcon className="h-5 w-5 text-gray-500" />
-              {/* { notifications.length > 0 && notifications.length } */}
+              { notifications.length > 0 && notifications.length }
             </Button>
 
             <div className="flex items-center gap-2">

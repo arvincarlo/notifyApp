@@ -134,15 +134,27 @@ type Approvals = {
     lastModified: string;
 };
 
+type Notifications = {
+    id: string;
+    activityType: string;
+    requestedBy: {
+        name: string;
+        role: string;
+    };
+    status: string;
+    lastModified: string;
+};
+
 type NotificationContextType = {
-    notifications: Approvals[];
+    approvals: Approvals[];
+    notifications: Notifications[];
 }
 
 const NotificationContext = createContext<NotificationContextType | undefined>(undefined);
 
 const NotificationProvider = ({ children }: { children: ReactNode }) => {
     const [approvals, setApprovals] = useState<Approvals[]>([]);
-    const [notifications,setNotifications] = useState(0);
+    const [notifications, setNotifications] = useState<Notifications[]>([]);
 
     useEffect(() => {
         if (approvalsList) setApprovals(approvalsList);
