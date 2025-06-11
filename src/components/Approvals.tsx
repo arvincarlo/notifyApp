@@ -17,6 +17,7 @@ import {
 import { DateRangePickerWithPresets } from "./DateRangePickerWithPresets";
 import { DateRange } from "react-day-picker";
 import { isCurrentDate, isWithinDateRange } from "@/lib/utils";
+import { useNotification } from "@/context/NotificationContext";
 
 export default function Approvals() {
   const [selectedUser, setSelectedUser] = useState("All Users");
@@ -24,118 +25,11 @@ export default function Approvals() {
     activity: "all",
     status: "all",
   });
-  const data1: Approval[] = [
-    {
-      id: "1",
-      activityType: "Parameter Maintenance",
-      requestedBy: {
-        name: "Leslie Alexander",
-        role: "Admin Maker - PM",
-      },
-      status: "Pending",
-      lastModified: "30 Oct 2024 15:00",
-    },
-    {
-      id: "2",
-      activityType: "Disclosures",
-      requestedBy: {
-        name: "Kristin Watson",
-        role: "Admin Maker - DN",
-      },
-      status: "Pending",
-      lastModified: "30 Oct 2024 15:00",
-    },
-    {
-      id: "3",
-      activityType: "Disclosures",
-      requestedBy: {
-        name: "Leslie Alexander",
-        role: "Admin Maker - DN",
-      },
-      status: "Pending",
-      lastModified: "30 Oct 2024 15:00",
-    },
-    {
-      id: "4",
-      activityType: "Disclosures",
-      requestedBy: {
-        name: "Kristin Watson",
-        role: "Admin Maker - DN",
-      },
-      status: "Pending Deletion",
-      lastModified: "30 Oct 2024 15:00",
-    },
-    {
-      id: "5",
-      activityType: "Parameter Maintenance",
-      requestedBy: {
-        name: "Leslie Alexander",
-        role: "Admin - AP-C",
-      },
-      status: "Rejected",
-      lastModified: "30 Oct 2024 15:00",
-    },
-    {
-      id: "6",
-      activityType: "Disclosures",
-      requestedBy: {
-        name: "Kristin Watson",
-        role: "Admin Maker - DN",
-      },
-      status: "Lapsed",
-      lastModified: "30 Oct 2024 15:00",
-    },
-    {
-      id: "7",
-      activityType: "Disclosures",
-      requestedBy: {
-        name: "Kristin Watson",
-        role: "Admin Maker - DN",
-      },
-      status: "Approved",
-      lastModified: "30 Oct 2024 15:00",
-    },
-    {
-      id: "8",
-      activityType: "Disclosures",
-      requestedBy: {
-        name: "Kristin Watson",
-        role: "Admin Maker - DN",
-      },
-      status: "Approved",
-      lastModified: "30 Oct 2024 15:00",
-    },
-    {
-      id: "9",
-      activityType: "Disclosures1",
-      requestedBy: {
-        name: "Kristin Watson",
-        role: "Admin Maker - DN",
-      },
-      status: "Approved",
-      lastModified: "30 Oct 2024 15:00",
-    },
-    {
-      id: "10",
-      activityType: "Disclosures2",
-      requestedBy: {
-        name: "Kristin Watson",
-        role: "Admin Maker - DN",
-      },
-      status: "Approved",
-      lastModified: "30 Oct 2024 15:00",
-    },
-    {
-      id: "11",
-      activityType: "Disclosures2",
-      requestedBy: {
-        name: "Kristin Watson",
-        role: "Admin Maker - DN",
-      },
-      status: "Approved",
-      lastModified: "30 Oct 2024 15:00",
-    },
-  ];
+
+  // Approvals data
+  const { notifications } = useNotification();
+
+  const data1: Approval[] = notifications;
   const users = data1.map((item) => ({
     id: item.id,
     name: item.requestedBy.name,

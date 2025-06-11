@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,6 +16,7 @@ import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { format } from "date-fns";
+import { useNotification } from "@/context/NotificationContext";
 
 export const Navbar = () => {
   const { user, logout } = useAuth();
@@ -26,6 +27,10 @@ export const Navbar = () => {
       : "";
     // return user?.name[0] + user?.name[1];
   }, [user?.name]);
+
+  const { notifications } = useNotification();
+
+
   return (
     <div className="h-14 sm:h-16">
       <header className="fixed top-0 left-0 right-0 w-full bg-white border-b shadow-md z-50">
@@ -46,6 +51,7 @@ export const Navbar = () => {
               className="border-none shadow-none hover:bg-transparent hover:shadow-none"
             >
               <BellIcon className="h-5 w-5 text-gray-500" />
+              { notifications.length > 0 && notifications.length }
             </Button>
 
             <div className="flex items-center gap-2">

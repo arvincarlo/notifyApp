@@ -5,6 +5,7 @@ import { SearchAccountProvider } from "./context/SearchContext";
 import { MsalAuthProvider } from "./providers/MsalAuthProvider";
 import { RouterGenerator } from "./routes/RouterGenerator";
 import { routes } from "./routes/config";
+import { NotificationProvider } from "./context/NotificationContext";
 
 function App() {
   return (
@@ -12,8 +13,10 @@ function App() {
       <MsalAuthProvider>
         <AuthProvider>
           <SearchAccountProvider>
-            <RouterGenerator routes={routes} />
-            <Toaster />
+            <NotificationProvider>
+              <RouterGenerator routes={routes} />
+              <Toaster />
+            </NotificationProvider>
           </SearchAccountProvider>
         </AuthProvider>
       </MsalAuthProvider>
