@@ -1,0 +1,407 @@
+.width-full {
+  width: 100%;
+}
+
+.height-full {
+  height: 100%;
+}
+
+.text-primary {
+  color: #c60d0d;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bg-primary {
+  background-color: #c60d0d;
+}
+
+.flex {
+  display: flex;
+}
+
+.gap-10px {
+  gap: 10px;
+}
+
+.gap-30px {
+  gap: 30px;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.font-weight-500 {
+  font-weight: 500;
+}
+
+.font-weight-600 {
+  font-weight: 600;
+}
+
+.font-weight-700 {
+  font-weight: 700;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #000000;
+}
+
+.margin-top {
+  margin-top: 10px;
+}
+
+.padding-10px {
+  padding: 10px;
+}
+
+.document-title {
+  font-size: 40px;
+}
+
+.title-sub {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.summay-full-name {
+  padding: 20px 0px;
+}
+
+.summary-cards {
+  width: 20%;
+  margin-right: 20px;
+  height: 801px;
+  min-width: 352px;
+  box-sizing: border-box;
+}
+
+.summary-breakdown {
+  width: 80%;
+}
+
+.summary-table {
+  width: 1196px;
+  height: 329px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.summary-table-header {
+  border-radius: 10px 10px 0 0;
+}
+
+.summary-table .summary-table-heading-1 {
+  width: 25%;
+  border-right: 2px solid #ffffff;
+  margin-right: 15px;
+  box-sizing: border-box;
+}
+
+.summary-table-heading-2 {
+  width: 75%;
+  margin-right: 15px;
+}
+
+.summary-table td {
+  padding: 10px;
+  font-size: 15px;
+  line-height: 22.5px;
+  white-space: nowrap;
+}
+
+.summary-portfolio-holdings {
+  width: 816px;
+  margin-top: 28px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+}
+
+.summay-card {
+  height: 801px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+}
+
+.summay-card-header {
+  height: 86px;
+  padding: 35px;
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 36px;
+  border-radius: 10px 10px 0px 0px;
+  box-sizing: border-box;
+}
+
+.summay-card-subheader {
+  height: 59px;
+}
+
+.summary-table-label {
+  border-right: 2px solid #ffd0d0;
+}
+
+.summay-card-content {
+  padding: 35px;
+  box-sizing: border-box;
+}
+
+.summay-card-content-total-aum {
+  height: 279px;
+  background-color: #ecca73;
+}
+
+.summay-card-content-total-aum .amount {
+  font-size: 38px;
+  line-height: 57px;
+}
+
+.currency {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.change {
+  padding: 10px 0;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.report-note {
+  font-size: 11px;
+  line-height: 16.5px;
+}
+
+.donut-chart {
+  width: 277.12px;
+  height: 277.12px;
+}
+
+.donut-chart-legend {
+  width: 224.73px;
+  height: 224.73px;
+}
+
+.donut-chart-title {
+  margin: 15px;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+/* Container for the donut chart */
+.donut-chart-container {
+  width: 270px;
+  height: 270px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  border: 3px solid #6f2727; /* Border around the outside of the donut */
+}
+
+.legend-container {
+  width: 347px;
+  height: 285px;
+  margin-top: 28px;
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.legend-container .donut-chart-container {
+  width: 224px;
+  height: 224px;
+}
+
+.legend-label {
+  padding: 5px;
+}
+
+/* Inner circle (the hole in the donut) */
+.donut-chart-container:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 112px; /* Size of the donut hole */
+  height: 112px;
+  background-color: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid #6f2727; /* Border around the inner hole of the donut */
+}
+
+/* Label inside slices */
+.donut-label {
+  position: absolute;
+  font-family: Arial, sans-serif;
+  font-size: 18.37px;
+  line-height: 27.56px;
+  font-weight: 700;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  padding: 2px 10px; /* Add some padding to prevent text from touching slice borders */
+  white-space: nowrap;
+  text-wrap: balance;
+}
+
+/* Label text (percent) */
+.donut-label .percentage {
+  font-size: 18.37px;
+  line-height: 27.56px;
+  font-weight: 700;
+}
+
+/* Label text (category) */
+.donut-label .category {
+  font-size: 11.72px;
+  line-height: 17.52px;
+  font-weight: 400;
+}
+
+/* Position labels dynamically inside each slice */
+.label-1 {
+  top: 25%; /* Money Market (30%) */
+  left: 50%;
+  color: black;
+}
+.label-2 {
+  top: 45%; /* Equities (15%) */
+  left: 75%;
+  color: white;
+}
+.label-3 {
+  top: 65%; /* Fixed Income (15%) */
+  left: 75%;
+  color: white;
+}
+.label-4 {
+  top: 80%; /* Unit Trusts (10%) */
+  left: 50%;
+  color: black;
+}
+.label-5 {
+  top: 65%; /* Structured Products & Other Investments (30%) */
+  left: 30%;
+  color: white;
+}
+
+.chart-container {
+  width: 40%;
+  height: 444px;
+  border-right: 1px solid #000000;
+}
+
+.chart-breakdown-container {
+  width: 60%;
+}
+
+.chart-breakdown-table {
+  margin-top: 0px !important;
+  height: 100%;
+  border-radius: 0px 10px 0px 0px;
+  border-collapse: collapse; /* Use collapse to prevent overlapping borders */
+  border-spacing: 0;
+  overflow: hidden;
+  margin-bottom: 0; /* Ensure no margin at the bottom */
+  padding: 0; /* Remove padding from the table */
+}
+
+.chart-breakdown-table td:last-child {
+  border-right: none; /* Ensure no border on the last cell if it's the last column */
+}
+
+.chart-breakdown-table tr:last-child td {
+  padding-bottom: 0; /* No extra padding at the bottom */
+}
+
+.chart-breakdown-label {
+  font-size: 15px;
+  line-height: 22.5px;
+}
+
+.chart-breakdown-heading {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.portfolio-class {
+  padding: 10px;
+  font-size: 15px;
+  line-height: 22.5px;
+}
+
+/* Add borders only to left and right of current value in PHP */
+.chart-breakdown-table tr td:nth-child(2):not(.chart-breakdown-heading) {
+  border-left: 1px solid #000000;
+  border-right: 1px solid #000000;
+}
+
+.square-indicator {
+  width: 13.22px;
+  height: 13.22px;
+}
+
+.php {
+  background-color: #ff8b8b;
+}
+
+.usd {
+  background-color: #8e0000;
+}
+
+.eur {
+  background-color: #590000;
+}
+
+.cny {
+  background-color: #e30c0c;
+}
+
+.jpy {
+  background-color: #ffbfbf;
+}
+
+.summary-appendix-container {
+  position: relative;
+  height: 150px;
+}
+
+.summary-appendix {
+  margin-top: 40px;
+  font-size: 11.51px;
+  line-height: 17.26px;
+}
+
+.footer-logo {
+  width: 166.13px;
+  height: auto;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}

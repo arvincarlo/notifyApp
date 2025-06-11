@@ -1,0 +1,49 @@
+.table-container {
+  padding-left: 20px;
+}
+
+table {
+  max-width: 1623px;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 10px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th,
+td {
+  border: none;
+  padding: 8px;
+}
+
+th {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: left;
+}
+
+td {
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center; /* Center-align specified column values */
+}
+
+td:first-child {
+  text-align: left; /* Left-align the first column */
+}
+
+td:last-child {
+  text-align: center;
+}
+
+.highlight-total {
+  background-color: #fff9d9;
+  font-weight: bold;
+}
+
+.no-border {
+  border: none;
+}

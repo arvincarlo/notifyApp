@@ -1,0 +1,20 @@
+.footer-notes {
+  padding: 20px;
+  /* font-family: Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #333; */
+}
+
+.note {
+  margin-bottom: 12px;
+}
+
+.contact-info {
+  padding-left: 20px;
+  margin-top: 4px;
+}
+
+.contact-info div {
+  margin-top: 2px;
+}
