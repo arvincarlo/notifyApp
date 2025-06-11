@@ -27,9 +27,9 @@ export default function Approvals() {
   });
 
   // Approvals data
-  const { notifications } = useNotification();
+  const { approvals } = useNotification();
 
-  const data1: Approval[] = notifications;
+  const data1: Approval[] = approvals;
   const users = data1.map((item) => ({
     id: item.id,
     name: item.requestedBy.name,

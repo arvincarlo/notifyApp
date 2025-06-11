@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
-const notificationsData = [
+const approvalsList = [
     {
         id: "1",
         activityType: "Parameter Maintenance",
@@ -123,7 +123,7 @@ const notificationsData = [
     },
 ];
 
-type Notification = {
+type Approvals = {
     id: string;
     activityType: string;
     requestedBy: {
@@ -135,16 +135,17 @@ type Notification = {
 };
 
 type NotificationContextType = {
-    notifications: Notification[];
+    notifications: Approvals[];
 }
 
 const NotificationContext = createContext<NotificationContextType | undefined>(undefined);
 
 const NotificationProvider = ({ children }: { children: ReactNode }) => {
-    const [notifications, setNotifications] = useState<Notification[]>([]);
+    const [approvals, setApprovals] = useState<Approvals[]>([]);
+    const [notifications,setNotifications] = useState(0);
 
     useEffect(() => {
-        if (notificationsData) setNotifications(notificationsData);
+        if (approvalsList) setApprovals(approvalsList);
     }, [])
 
     // const [unreadCount, setUnreadCount] = useState(0);
@@ -165,7 +166,7 @@ const NotificationProvider = ({ children }: { children: ReactNode }) => {
 
     return (
         <NotificationContext.Provider
-            value={{ notifications }}
+            value={{ approvals, notifications }}
         >
             {children}
         </NotificationContext.Provider>
