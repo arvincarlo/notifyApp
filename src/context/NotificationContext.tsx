@@ -157,7 +157,14 @@ const NotificationProvider = ({ children }: { children: ReactNode }) => {
     const [notifications, setNotifications] = useState<Notifications[]>([]);
 
     useEffect(() => {
-        if (approvalsList) setApprovals(approvalsList);
+        if (approvalsList) {
+            // Set approvals state with the predefined list
+            setApprovals(approvalsList);
+            
+            // Set notifications state with only pending approvals (filter)
+            const notificationList = approvalsList.filter(approval => approval.status == "Pending");
+            setNotifications(notificationList);
+        }
     }, [])
 
     // const [unreadCount, setUnreadCount] = useState(0);
