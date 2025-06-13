@@ -1,16 +1,18 @@
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, Fragment } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Separator } from "@/components/ui/separator";
 import {
   BellIcon,
   UserIcon,
   LogOutIcon,
   ChevronDownIcon,
   UserPen,
+  CalendarClock
 } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
@@ -45,15 +47,54 @@ export const Navbar = () => {
           </Link>
 
           <div className="flex items-center gap-2 sm:gap-4">
-            <Button
-              onClick={() => console.log("Notifications clicked")}
-              variant="outline"
-              size="icon"
-              className="border-none shadow-none hover:bg-transparent hover:shadow-none"
-            >
-              <BellIcon className="h-5 w-5 text-gray-500" />
-              { notifications.length > 0 && notifications.length }
-            </Button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  onClick={() => console.log("Notifications clicked")}
+                  variant="outline"
+                  size="icon"
+                  className="border-none shadow-none hover:bg-transparent hover:shadow-none"
+                >
+                  <BellIcon className="h-5 w-5 text-gray-500" />
+                  { notifications.length > 0 && notifications.length }
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="overflow-auto w-80 p-4 max-h-[600px]">
+                <div className="space-y-4">
+                  {notifications.length === 0 && (
+                    <div className="flex justify-center gap-3">
+                      No notifications available.
+                    </div>
+                  )}
+                  
+                  {notifications.length > 0 && (
+                    <>
+                      <div className="flex justify-center">
+                        Pending for Approvals
+                      </div>
+                      <Separator/>
+                      {notifications.map((notification, index) => (
+                        <>
+                          <Fragment key={index}>
+                              <div key={notification.id} className="flex items-center gap-3">
+                                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-500 text-white">
+                                      <CalendarClock className="h-5 w-5" />
+                                  </div>
+                                  <div className="flex-1 space-y-1">
+                                      <p className="text-sm font-medium">{notification?.activityType}</p>
+                                      <p className="text-sm text-gray-500 dark:text-gray-400">{notification.requestedBy.name}</p>
+                                  </div>
+                              </div>
+                          </Fragment>
+                          
+                        </>
+                      ))}
+                    </>
+                  )}
+                </div>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            
 
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
