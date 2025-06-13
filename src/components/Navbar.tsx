@@ -58,7 +58,14 @@ export const Navbar = () => {
                   >
                     <BellIcon className="h-5 w-5 text-gray-500" />
                     { notifications.length > 0 && (
-                      <Badge variant="destructive" className="h-5 min-w-5 rounded-full px-1 font-mono tabular-nums">{ notifications.length > 0 && notifications.length }</Badge>
+                      <div className="flex">
+                        <Badge
+                          className="h-5 min-w-5 rounded-full px-1 font-mono tabular-nums"
+                          variant="destructive"
+                        >
+                          { notifications.length }
+                        </Badge>
+                      </div>
                     )}
                   </Button>
                 </DropdownMenuTrigger>
