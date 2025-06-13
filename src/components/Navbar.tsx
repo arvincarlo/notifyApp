@@ -19,6 +19,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { format } from "date-fns";
 import { useNotification } from "@/context/NotificationContext";
+import { Badge } from "./ui/badge";
 
 export const Navbar = () => {
   const { user, logout } = useAuth();
@@ -48,17 +49,19 @@ export const Navbar = () => {
 
           <div className="flex items-center gap-2 sm:gap-4">
             <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button
-                  onClick={() => console.log("Notifications clicked")}
-                  variant="outline"
-                  size="icon"
-                  className="border-none shadow-none hover:bg-transparent hover:shadow-none"
-                >
-                  <BellIcon className="h-5 w-5 text-gray-500" />
-                  { notifications.length > 0 && notifications.length }
-                </Button>
-              </DropdownMenuTrigger>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="border-none shadow-none hover:bg-transparent hover:shadow-none focus:outline-none focus:ring-0 focus:border-none active:border-none"
+                    style={{ boxShadow: "none", border: "none" }}
+                  >
+                    <BellIcon className="h-5 w-5 text-gray-500" />
+                    { notifications.length > 0 && (
+                      <Badge variant="destructive" className="h-5 min-w-5 rounded-full px-1 font-mono tabular-nums">{ notifications.length > 0 && notifications.length }</Badge>
+                    )}
+                  </Button>
+                </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="overflow-auto w-80 p-4 max-h-[600px]">
                 <div className="space-y-4">
                   {notifications.length === 0 && (
@@ -74,20 +77,17 @@ export const Navbar = () => {
                       </div>
                       <Separator/>
                       {notifications.map((notification, index) => (
-                        <>
-                          <Fragment key={index}>
-                              <div key={notification.id} className="flex items-center gap-3">
-                                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-500 text-white">
-                                      <CalendarClock className="h-5 w-5" />
-                                  </div>
-                                  <div className="flex-1 space-y-1">
-                                      <p className="text-sm font-medium">{notification?.activityType}</p>
-                                      <p className="text-sm text-gray-500 dark:text-gray-400">{notification.requestedBy.name}</p>
-                                  </div>
-                              </div>
-                          </Fragment>
-                          
-                        </>
+                        <Fragment key={index}>
+                            <div key={notification.id} className="flex items-center gap-3">
+                                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-500 text-white">
+                                    <CalendarClock className="h-5 w-5" />
+                                </div>
+                                <div className="flex-1 space-y-1">
+                                    <p className="text-sm font-medium">{notification?.activityType}</p>
+                                    <p className="text-sm text-gray-500 dark:text-gray-400">{notification.requestedBy.name}</p>
+                                </div>
+                            </div>
+                        </Fragment>
                       ))}
                     </>
                   )}
