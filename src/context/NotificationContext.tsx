@@ -22,6 +22,186 @@ const approvalsList = [
         lastModified: "30 Oct 2024 15:00",
     },
     {
+        id: "2",
+        activityType: "Disclosures",
+        requestedBy: {
+            name: "Kristin Watson",
+            role: "Admin Maker - DN",
+        },
+        status: "Pending",
+        lastModified: "30 Oct 2024 15:00",
+    },
+    {
+        id: "2",
+        activityType: "Disclosures",
+        requestedBy: {
+            name: "Kristin Watson",
+            role: "Admin Maker - DN",
+        },
+        status: "Pending",
+        lastModified: "30 Oct 2024 15:00",
+    },
+    {
+        id: "2",
+        activityType: "Disclosures",
+        requestedBy: {
+            name: "Kristin Watson",
+            role: "Admin Maker - DN",
+        },
+        status: "Pending",
+        lastModified: "30 Oct 2024 15:00",
+    },
+    {
+        id: "2",
+        activityType: "Disclosures",
+        requestedBy: {
+            name: "Kristin Watson",
+            role: "Admin Maker - DN",
+        },
+        status: "Pending",
+        lastModified: "30 Oct 2024 15:00",
+    },
+    {
+        id: "2",
+        activityType: "Disclosures",
+        requestedBy: {
+            name: "Kristin Watson",
+            role: "Admin Maker - DN",
+        },
+        status: "Pending",
+        lastModified: "30 Oct 2024 15:00",
+    },
+    {
+        id: "2",
+        activityType: "Disclosures",
+        requestedBy: {
+            name: "Kristin Watson",
+            role: "Admin Maker - DN",
+        },
+        status: "Pending",
+        lastModified: "30 Oct 2024 15:00",
+    },
+    {
+        id: "2",
+        activityType: "Disclosures",
+        requestedBy: {
+            name: "Kristin Watson",
+            role: "Admin Maker - DN",
+        },
+        status: "Pending",
+        lastModified: "30 Oct 2024 15:00",
+    },
+    {
+        id: "2",
+        activityType: "Disclosures",
+        requestedBy: {
+            name: "Kristin Watson",
+            role: "Admin Maker - DN",
+        },
+        status: "Pending",
+        lastModified: "30 Oct 2024 15:00",
+    },
+    {
+        id: "2",
+        activityType: "Disclosures",
+        requestedBy: {
+            name: "Kristin Watson",
+            role: "Admin Maker - DN",
+        },
+        status: "Pending",
+        lastModified: "30 Oct 2024 15:00",
+    },
+    {
+        id: "2",
+        activityType: "Disclosures",
+        requestedBy: {
+            name: "Kristin Watson",
+            role: "Admin Maker - DN",
+        },
+        status: "Pending",
+        lastModified: "30 Oct 2024 15:00",
+    },
+    {
+        id: "2",
+        activityType: "Disclosures",
+        requestedBy: {
+            name: "Kristin Watson",
+            role: "Admin Maker - DN",
+        },
+        status: "Pending",
+        lastModified: "30 Oct 2024 15:00",
+    },
+    {
+        id: "2",
+        activityType: "Disclosures",
+        requestedBy: {
+            name: "Kristin Watson",
+            role: "Admin Maker - DN",
+        },
+        status: "Pending",
+        lastModified: "30 Oct 2024 15:00",
+    },
+    {
+        id: "2",
+        activityType: "Disclosures",
+        requestedBy: {
+            name: "Kristin Watson",
+            role: "Admin Maker - DN",
+        },
+        status: "Pending",
+        lastModified: "30 Oct 2024 15:00",
+    },
+    {
+        id: "2",
+        activityType: "Disclosures",
+        requestedBy: {
+            name: "Kristin Watson",
+            role: "Admin Maker - DN",
+        },
+        status: "Pending",
+        lastModified: "30 Oct 2024 15:00",
+    },
+    {
+        id: "2",
+        activityType: "Disclosures",
+        requestedBy: {
+            name: "Kristin Watson",
+            role: "Admin Maker - DN",
+        },
+        status: "Pending",
+        lastModified: "30 Oct 2024 15:00",
+    },
+    {
+        id: "2",
+        activityType: "Disclosures",
+        requestedBy: {
+            name: "Kristin Watson",
+            role: "Admin Maker - DN",
+        },
+        status: "Pending",
+        lastModified: "30 Oct 2024 15:00",
+    },
+    {
+        id: "2",
+        activityType: "Disclosures",
+        requestedBy: {
+            name: "Kristin Watson",
+            role: "Admin Maker - DN",
+        },
+        status: "Pending",
+        lastModified: "30 Oct 2024 15:00",
+    },
+    {
+        id: "2",
+        activityType: "Disclosures",
+        requestedBy: {
+            name: "Kristin Watson",
+            role: "Admin Maker - DN",
+        },
+        status: "Pending",
+        lastModified: "30 Oct 2024 15:00",
+    },
+    {
         id: "3",
         activityType: "Disclosures",
         requestedBy: {

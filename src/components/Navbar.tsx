@@ -1,25 +1,24 @@
-import { useEffect, useMemo, Fragment } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Separator } from "@/components/ui/separator";
-import {
-  BellIcon,
-  UserIcon,
-  LogOutIcon,
-  ChevronDownIcon,
-  UserPen,
-  CalendarClock
-} from "lucide-react";
-import { Button } from "./ui/button";
-import { Link } from "react-router-dom";
+
+
 import { useAuth } from "@/hooks/useAuth";
 import { format } from "date-fns";
-import { useNotification } from "@/context/NotificationContext";
-import { Badge } from "./ui/badge";
+import {
+  BellIcon,
+  ChevronDownIcon,
+  LogOutIcon,
+  UserIcon,
+  UserPen
+} from "lucide-react";
+import { useMemo } from "react";
+import { Link } from "react-router-dom";
+
+import Notifications from "./Notifications";
 
 export const Navbar = () => {
   const { user, logout } = useAuth();
@@ -30,10 +29,6 @@ export const Navbar = () => {
       : "";
     // return user?.name[0] + user?.name[1];
   }, [user?.name]);
-
-  const { notifications } = useNotification();
-  console.log(notifications);
-
 
   return (
     <div className="h-14 sm:h-16">
@@ -48,61 +43,7 @@ export const Navbar = () => {
           </Link>
 
           <div className="flex items-center gap-2 sm:gap-4">
-            <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="border-none shadow-none hover:bg-transparent hover:shadow-none focus:outline-none focus:ring-0 focus:border-none active:border-none"
-                    style={{ boxShadow: "none", border: "none" }}
-                  >
-                    <BellIcon className="h-5 w-5 text-gray-500" />
-                    { notifications.length > 0 && (
-                      <div className="flex">
-                        <Badge
-                          className="h-5 min-w-5 rounded-full px-1 font-mono tabular-nums"
-                          variant="destructive"
-                        >
-                          { notifications.length }
-                        </Badge>
-                      </div>
-                    )}
-                  </Button>
-                </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="overflow-auto w-80 p-4 max-h-[600px]">
-                <div className="space-y-4">
-                  {notifications.length === 0 && (
-                    <div className="flex justify-center gap-3">
-                      No notifications available.
-                    </div>
-                  )}
-                  
-                  {notifications.length > 0 && (
-                    <>
-                      <div className="flex justify-center">
-                        Pending for Approvals
-                      </div>
-                      <Separator/>
-                      {notifications.map((notification, index) => (
-                        <Fragment key={index}>
-                            <div key={notification.id} className="flex items-center gap-3">
-                                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-500 text-white">
-                                    <CalendarClock className="h-5 w-5" />
-                                </div>
-                                <div className="flex-1 space-y-1">
-                                    <p className="text-sm font-medium">{notification?.activityType}</p>
-                                    <p className="text-sm text-gray-500 dark:text-gray-400">{notification.requestedBy.name}</p>
-                                </div>
-                            </div>
-                        </Fragment>
-                      ))}
-                    </>
-                  )}
-                </div>
-              </DropdownMenuContent>
-            </DropdownMenu>
-            
-
+            <Notifications/>
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
                 <span className="text-sm">{ShortName}</span>
