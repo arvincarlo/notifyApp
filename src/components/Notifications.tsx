@@ -40,16 +40,16 @@ export default function Notifications() {
             </DropdownMenuTrigger>
             <DropdownMenuContent className="overflow-auto w-96 p-4 max-h-[90vh]">
                 <div className="">
-                    {notifications.length === 0 && (
+                    {notifications.length == 0 && (
                         <div className="flex justify-center gap-3">
-                            No notifications available.
+                            No notification available.
                         </div>
                     )}
 
                     {notifications.length > 0 && (
                         <>
                             <div className="flex justify-center pb-4 font-semibold">
-                                Pending Approvals
+                                <Badge className="bg-[#FDF9E9] text-[#957504] text-md">Pending Approvals</Badge>
                             </div>
                             <Separator />
                             {notifications.map((notification, index) => (

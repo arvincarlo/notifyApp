@@ -43,7 +43,10 @@ export const Navbar = () => {
           </Link>
 
           <div className="flex items-center gap-2 sm:gap-4">
+
+            {/* Notifications Navbar */}
             <Notifications/>
+            
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
                 <span className="text-sm">{ShortName}</span>
